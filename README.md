@@ -29,7 +29,7 @@ This intelligent web platform predicts carbon footprint and renewable energy usa
 
 ## Clone the repository
 
-git clone https://github.com/ton-utilisateur/ton-projet.git
+git clone https://github.com/MEDSANSA/Pi_Bi_Project.git
 
 ## Backend (Flask - Model Deployment)
 
