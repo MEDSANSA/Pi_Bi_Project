@@ -1,0 +1,20 @@
+<div class="chat-bubble" (click)="togglePopup()">
+    <i class="fas fa-comment icon-white"></i>
+</div>
+
+<div class="chat-popup" [ngClass]="{'active': isPopupOpen}">
+    <div class="chat-header">
+        <h4>Chat with Gemini</h4>
+    </div>
+    <div class="chat-body">
+        <div *ngFor="let msg of chatMessages">
+            <div [ngClass]="{'user-message': msg.sender === 'user', 'bot-message': msg.sender === 'bot'}">
+                {{ msg.message }}
+            </div>
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input [(ngModel)]="userMessage" placeholder="Write a message..." />
+        <button (click)="sendMessage()">Send</button>
+    </div>
+</div>

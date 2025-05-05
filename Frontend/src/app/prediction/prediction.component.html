@@ -1,0 +1,72 @@
+<section class="page-section" id="services">
+    <div class="container px-2 px-lg-5">
+        <h2 class="text-center mt-0">Carbon Footprint Prediction</h2>
+        <hr class="divider" />
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 800px;">
+
+            <form (ngSubmit)="Predict_carbon_footprint()">
+                <h4 *ngIf="prediction !== null" class="mb-3">🧠 Carbon Footprint Prediction:
+                    <span
+                        [ngStyle]="{'color': prediction === 'low' ? 'green' : prediction === 'medium' ? 'orange' : prediction === 'high' ? 'red' : 'black'}">
+                        {{ prediction }}
+                    </span>
+                </h4>
+
+                <div class="form-outline mb-4">
+                    <span>Water Consumption</span>
+                    <input type="number" [(ngModel)]="waterConsumption" name="water_consumption"
+                        placeholder="100-1000 liters" class="form-control mb-2" required>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <span>Renewable Energy %</span>
+                    <input type="number" [(ngModel)]="renewableEnergy" name="renewable_energy_percentage"
+                        placeholder="0%-100%" class="form-control mb-2" required>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <span>Material Type</span>
+                    <select [(ngModel)]="selectedMaterialType" name="material_type" class="form-control mb-2" required>
+                        <option *ngFor="let material of materialTypes" [value]="material">
+                            {{ material }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <span>Transport Type</span>
+                    <select [(ngModel)]="selectedTransportType" name="transport_type" class="form-control mb-2"
+                        required>
+                        <option *ngFor="let transport of transportTypes" [value]="transport">
+                            {{ transport }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <span>Recycled Packaging</span>
+                    <select [(ngModel)]="selectedRecycledPackaging" name="recycled_packaging" class="form-control mb-2"
+                        required>
+                        <option *ngFor="let recycled of recycledPackagingOptions" [value]="recycled">
+                            {{ recycled }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-success" type="submit">
+                        Predict
+                    </button>
+                    <button class="btn btn-secondary" (click)="reset()" [disabled]="!prediction">Reset</button>
+                </div>
+
+            </form>
+            <div *ngIf="prediction" class="alert p-4 mb-4 mt-4"
+            [ngStyle]="{ 'background-color': getInterpretation().color, 'color': 'white' }">
+            <h5>{{ getInterpretation().emoji }} Here’s what you need to know !</h5>
+            <p>{{ getInterpretation().message }}</p>
+        </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+<section class="page-section" id="services">
+    <div class="container px-2 px-lg-5">
+        <h2 class="text-center mt-0">Renewable Energy Prediction</h2>
+        <hr class="divider" />
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 800px;">
+
+            <form (ngSubmit)="predictEnergy()">
+                <h4 *ngIf="predictionResult !== null" class="mb-3">
+                    🧠 Predicted Renewable Energy:
+                    <span class="text-success">{{ predictionResult | number: '1.0-2' }}%</span>
+                </h4>
+
+                <div class="form-outline mb-4">
+                    <label>Carbon Footprint (kg CO₂e/unit)</label>
+                    <input type="number" [(ngModel)]="formData.Carbon_Footprint_per_Unit_kgCO2e" name="carbon_footprint"
+                        class="form-control mb-2" required />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label>Water Consumption (liters/unit)</label>
+                    <input type="number" [(ngModel)]="formData.Water_Consumption_per_Unit_liters"
+                        name="water_consumption" class="form-control mb-2" required />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label>Sustainability Program</label>
+                    <select [(ngModel)]="formData.Sustainability_Program" name="sustainability_program"
+                        class="form-control mb-2" required>
+                        <option [value]="1">Yes</option>
+                        <option [value]="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label>Transport Type</label>
+                    <select [(ngModel)]="formData.Transport_Type" name="transport_type" class="form-control mb-2"
+                        required>
+                        <option *ngFor="let transport of transportTypes" [value]="transport">{{ transport }}</option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label>Environmental Certifications</label>
+                    <select [(ngModel)]="formData.Environmental_Certifications" name="certification"
+                        class="form-control mb-2" required>
+                        <option *ngFor="let cert of certificationTypes" [value]="cert">{{ cert }}</option>
+                    </select>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label>State</label>
+                    <select [(ngModel)]="formData.State" name="state" class="form-control mb-2" (change)="updateRegion()" required>
+                        <option *ngFor="let st of state" [value]="st">{{ st }}</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-success" type="submit">Predict</button>
+                    <button class="btn btn-secondary" type="button" (click)="resetForm()"
+                        [disabled]="!predictionResult">Reset</button>
+                </div>
+            </form>
+
+            <div *ngIf="predictionResult !== null && getEnergyInterpretation()" class="alert p-4 mb-4 mt-4"
+                [ngStyle]="{ 'background-color': getEnergyInterpretation()?.color, 'color': 'white' }">
+                <h5>{{ getEnergyInterpretation()?.emoji }} Here’s what you need to know !</h5>
+                <p>{{ getEnergyInterpretation()?.message }}</p>
+            </div>
+
+
+        </div>
+    </div>
+</section>

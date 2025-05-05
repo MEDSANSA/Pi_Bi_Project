@@ -1,0 +1,25 @@
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Carbon Footprint Prediction</h2>
+        <hr class="divider" />
+
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 800px;">
+            <h4>Upload material image to predict carbon footprint</h4>
+            <div class="text-center mb-4">
+                <input type="file" (change)="onFileSelected($event)" class="form-control mb-2">
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="btn btn-success" (click)="predict()" [disabled]="!selectedFile">Predict</button>
+                    <button class="btn btn-secondary" (click)="reset()"
+                        [disabled]="!selectedFile && !predictionResult">Reset</button>
+                </div>
+            </div>
+
+            <div *ngIf="predictionResult" class="text-center mt-4">
+                <h4 class="mb-3">🧠 Prediction: <span class="text-success">{{ predictionResult }}</span></h4>
+                <h4 class="mb-3" *ngIf="carbonFootprint !== null">🌍 Empreinte carbone estimée : <span class="text-success">{{ carbonFootprint  }} g CO₂</span></h4>
+                <img [src]="imageUrl" alt="Predicted Image" class="img-fluid rounded shadow-sm"
+                    style="max-height: 400px;" />
+            </div>
+        </div>
+    </div>
+</section>

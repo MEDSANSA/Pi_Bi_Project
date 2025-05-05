@@ -1,0 +1,11 @@
+Flask
+flask-cors
+numpy
+pandas
+scikit-learn
+tensorflow
+Pillow
+joblib
+uvicorn
+fastapi
+requests

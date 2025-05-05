@@ -1,0 +1,27 @@
+.gradient-custom-2 {
+    background: #a8e063; /* Fallback solid color */
+background: -webkit-linear-gradient(to right, #317213, #a8e063);
+background: linear-gradient(to right, #317213, #a8e063);
+
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.alert-red {
+    color: #fff;
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}

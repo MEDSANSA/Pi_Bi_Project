@@ -1,0 +1,12 @@
+<section class="page-section" id="services" *ngIf="dashboardUrl">
+    <div class="container px-0 px-lg-0">
+        <h2 class="text-center mt-0">{{dashboardTitle}}</h2>
+        <hr class="divider" />
+        <iframe title="sustainability" width="110%" height="920" [src]="dashboardUrl | safe" frameborder="0"
+            allowFullScreen="true"></iframe>
+    </div>
+</section>
+
+<div *ngIf="!dashboardUrl">
+    <p class="text-center text-danger">Aucun dashboard disponible pour ce rôle.</p>
+</div>

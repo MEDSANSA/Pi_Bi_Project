@@ -1,0 +1,4 @@
+<app-header *ngIf="!isAuthRoute()"></app-header>
+<app-chatbot *ngIf="!isAuthRoute()"></app-chatbot>
+<router-outlet></router-outlet>
+<app-footer *ngIf="!isAuthRoute()"></app-footer>
