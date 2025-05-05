@@ -114,7 +114,7 @@ def chat():
 import requests
 
 def get_gemini_response(user_message):
-    gemini_api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCyMyHJLwMyRp3qmyO8jpt4VJhRNBToxUw"
+    gemini_api_url = ""
     
     payload = {
         "contents": [
