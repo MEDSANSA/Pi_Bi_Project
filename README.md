@@ -1,9 +1,9 @@
-# Sustainable Intelligence Platform
+# 🌿 Sustainable Intelligence Platform
 
 This intelligent web platform predicts carbon footprint and renewable energy usage in the agri-food sector. It integrates machine learning and deep learning models with a modern Angular-based user interface.
 
 
-## Technologies Used
+## 🚀 Technologies Used
 
 | Component        | Technology                  |
 | ---------------- | --------------------------- |
@@ -16,7 +16,7 @@ This intelligent web platform predicts carbon footprint and renewable energy usa
 | Database         | PostgreSQL                  |
 
 
-## Features
+## ✨ Features
 
 - Secure authentication using FastAPI
 - Carbon footprint prediction via a user-friendly form
@@ -25,7 +25,7 @@ This intelligent web platform predicts carbon footprint and renewable energy usa
 - Interactive dashboards
 - Chatbot integration with Gemini API
 
-## Local Installation Guide
+## ⚙️ Local Installation Guide
 
 ## Clone the repository
 
