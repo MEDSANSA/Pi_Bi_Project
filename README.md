@@ -31,7 +31,7 @@ This intelligent web platform predicts carbon footprint and renewable energy usa
 
 git clone https://github.com/MEDSANSA/Pi_Bi_Project.git
 
-## Backend (Flask - Model Deployment)
+## ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) Backend (Flask - Model Deployment)
 
 cd Backend
 pip install -r requirements.txt
@@ -39,14 +39,14 @@ python app.py
 
 http://localhost:5000
 
-## Backend (FastAPI - User Authentication)
+## ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) Backend (FastAPI - User Authentication)
 
 cd Backend
 uvicorn main:app --reload
 
 http://127.0.0.1:8000
 
-## Frontend (Angular)
+## ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white) Frontend (Angular)
 
 cd Frontend
 npm install
