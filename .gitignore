@@ -1,0 +1,6 @@
+Frontend/node_modules/
+Frontend/.vscode/
+Frontend/.idea/
+Backend/__pycache__/
+Backend/models/__pycache__/
+Backend/routes/__pycache__/
